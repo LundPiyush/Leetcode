@@ -6,8 +6,10 @@ Solution - https://www.youtube.com/watch?v=TZbo8gzbfzY
 '''
 Explaination - 
     We use 2 pointer approach . First Hint we get is array is in increasing order
-    if summation of both elements is more than expected we know to make the summation closer to our target 
-    we have to lower the value of upper limit and vice versa.
+    if summation of both elements(first and last) is more than expected we know in order to 
+    make the summation closer to our target we have to lower the value of upper limit. 
+    if summation is lesser than our target we have to increase the lower limit in order to make
+    the summation closer to our target.
 '''
 def twoSum(self, numbers: List[int], target: int) -> List[int]:
     first_ptr,last_ptr = 0,len(numbers)-1 
