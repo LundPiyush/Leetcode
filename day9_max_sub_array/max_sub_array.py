@@ -1,3 +1,8 @@
+'''
+Problem - https://leetcode.com/problems/maximum-subarray
+Solution - https://www.youtube.com/watch?v=2ln84zDGIhI
+'''
+
 def maxSubArray(self, nums: List[int]) -> int:
     maxSoFar = nums[0]
     maxSum=nums[0]
