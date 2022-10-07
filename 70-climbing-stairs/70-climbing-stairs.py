@@ -1,5 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
+        
+    # thinking in a fibonaci way
         if n <=2:
             return n
         
