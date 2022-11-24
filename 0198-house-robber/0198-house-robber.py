@@ -14,7 +14,8 @@ class Solution:
         n=len(nums)
         dp=[0]*n
         #tabulation : 
-        
+        # space optimization store prev = dp[i-1]  and prev2 = dp[i-2]  
+        # prev , prev2 , curi = 0,0,0
         for i in range(0,n):
             if i==0:
                 dp[i] = nums[0]
