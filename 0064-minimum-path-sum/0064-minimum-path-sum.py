@@ -15,17 +15,23 @@ class Solution:
         m = len(grid)
         n = len(grid[0])
         dp=[[-1]*n for _ in range(m)]
+        prev=[0]*n
         
+        '''
+        for space optimazation => dp[i] = cur and dp[i-1] = prev
+        '''
         for i in range(0,m):
+            cur=[0]*n
             for j in range(0,n):
                 if i== 0 and j ==0:
-                    dp[i][j] = grid[i][j]
+                    cur[j] = grid[i][j]
                 else:
                     up,left = float('inf'),float('inf')
                     if i>0:
-                        up= grid[i][j] + dp[i-1][j]
+                        up= grid[i][j] + prev[j]
                     if j>0:
-                        left= grid[i][j] + dp[i][j-1]
-                    dp[i][j] = min(up,left)
-        return dp[m-1][n-1]
+                        left= grid[i][j] + cur[j-1]
+                    cur[j] = min(up,left)
+            prev = cur                    
+        return prev[n-1]
         #return self.f(m-1,n-1,grid,dp) -> recursion
