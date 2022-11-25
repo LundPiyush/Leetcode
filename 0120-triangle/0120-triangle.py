@@ -13,17 +13,22 @@ class Solution:
         n= len(triangle)
         dp=[[0]*n for _ in range(n)]
         
+        front=[0]*n
         # filling last row
         for j in range(0,n):
-            dp[n-1][j] = triangle[n-1][j]
+            front[j] = triangle[n-1][j]
+        # Space optimization - >   dp[i+1],dp[n-1] = front
+        #                           dp[i],dp[0] = cur
         
         # i starts from second last row as we have already filled last row
         # j starts from i and ends at 0 as for every i there are i+1 elements
         # ^ for i=2 -> j=0,1,2 (3 elements)
         for i in range(n-2,-1,-1):
+            cur=[0]*n
             for j in range(i,-1,-1):
-                down = triangle[i][j] + dp[i+1][j]
-                daigonal = triangle[i][j] + dp[i+1][j+1]
-                dp[i][j] = min(down,daigonal)
-        return dp[0][0]
+                down = triangle[i][j] + front[j]
+                daigonal = triangle[i][j] + front[j+1]
+                cur[j] = min(down,daigonal)
+            front = cur 
+        return front[0]
         #return self.f(0,0,triangle,n,dp) => recursion
