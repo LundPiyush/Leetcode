@@ -39,7 +39,7 @@ class Solution:
         '''
         
         # Base case 
-        
+        '''
         for j1 in range(0,m):
             for j2 in range(0,m):
                 if j1==j2:
@@ -70,8 +70,5 @@ class Solution:
                     dp[i][j1][j2] = maxi
         return dp[0][0][m-1]
         
-        
-        
-        
-        
-        #return self.f(0,0,m-1,n,m,grid,dp) => recursion 
+        '''
+        return self.f(0,0,m-1,n,m,grid,dp) # => recursion 
