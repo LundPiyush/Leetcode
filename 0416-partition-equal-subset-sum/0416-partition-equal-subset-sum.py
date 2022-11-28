@@ -6,7 +6,7 @@ class Solution:
         if arr[0]<=k:
             prev[arr[0]] = True
         for ind in range(1,n):
-            for target in range(k,1,-1):
+            for target in range(k,-1,-1):
                 not_take = prev[target]
                 take = False
                 if arr[ind]<= target:
