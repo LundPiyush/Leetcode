@@ -15,7 +15,7 @@ class Solution:
             dp[0][arr[0]] = True
         
         for ind in range(1,n):
-            for target in range(k,-1,-1):
+            for target in range(1,k+1):
                 not_take = dp[ind-1][target]
                 take = False
                 if arr[ind]<= target:
