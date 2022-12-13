@@ -20,11 +20,35 @@ class Solution:
     
     def coinChange(self, coins: List[int], amount: int) -> int:
         n = len(coins)
-        dp =[[-1]*(amount+1) for _ in range(n)]
-    #recursion
+        dp =[[0]*(amount+1) for _ in range(n)]
+        x = amount
+        #space optimization
+        prev = [0]*(x+1)
+        cur =[0]*(x+1)
+    
+        for T in range(x+1):
+            if T % coins[0]==0: 
+                prev[T] = T//coins[0]
+            else:
+                prev[T] = float('inf')
+            
+        for ind in range(1,n):
+            for T in range(x+1):
+                not_take = 0 + prev[T]
+                take = float('inf')
+                if coins[ind]<=T:
+                    take = 1 + cur[T-coins[ind]]
+                cur[T] = min(not_take,take)
+            prev = cur
+        out = prev[x]
+        if out == float('inf'):
+            return -1
+        return out
+        
+'''
+    recursion
         out = self.f(n-1,amount,coins,dp)
         if out == float('inf'):
             return -1
         return out
-    
-        
+'''
