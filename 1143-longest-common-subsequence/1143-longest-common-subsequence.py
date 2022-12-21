@@ -21,11 +21,12 @@ class Solution:
         #shifting index towards right
         dp=[[0]*(m+1) for _ in range(n+1)]
         
+        '''
         for j in range(m+1):
             dp[0][j] = 0
         for i in range(n+1):
             dp[i][0] = 0
-        
+        '''
         for ind1 in range(1,n+1):
             for ind2 in range(1,m+1):
                 #match case
