@@ -2,6 +2,13 @@ class Solution:
     
         
     def longestPalindromeSubseq(self, s: str) -> int:
+        '''
+        
+        Logic is reverse the string given(s1) and store in s2
+        now find lcs(s1,s2)=> Longest common subsequence for s1 and s2 
+        lcs found from s1 and s2 will be pallindromic as s2 is reverse of s1
+        
+        '''
         str1 = s
         n = len(str1)
         str2 = "".join(reversed(str1))
