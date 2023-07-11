@@ -36,3 +36,9 @@ class Solution:
         return nums
         
         '''
+        '''
+        TC = > O(x) + O(n-x) => O(n)
+        SC = > O(1)
+        
+        '''
+        
