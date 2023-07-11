@@ -3,18 +3,36 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n = len(nums)
-        j = -1 
-        for  i in range(n):
-            if nums[i] == 0:
-                j=i
+        n= len(nums)
+        j = -1
+        for i in range(n):
+            if (nums[i] == 0):
+                j = i
                 break
-        # no zero found in array
-        if j == -1:
+        if j==-1: 
             return nums
-        
         for i in range(j+1,n,1):
             if nums[i]!=0:
                 nums[i],nums[j] = nums[j],nums[i]
-                j = j+1
+                j+=1
+        return nums    
+        
+        
+        
+        
+        '''
+        n= len(nums)
+        temp =[]
+        for i in range(n):
+            if nums[i]!=0:
+                temp.append(nums[i])
+        
+        for i in range(len(temp)):
+            nums[i] = temp[i]
+        
+        for i in range(len(temp),n,1):
+            nums[i] = 0
+            
         return nums
+        
+        '''
