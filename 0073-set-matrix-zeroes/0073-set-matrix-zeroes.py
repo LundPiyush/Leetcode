@@ -1,5 +1,14 @@
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
+        # Optimal approach 
+        '''
+        Time Complexity: O(2*(N*M)), where N = no. of rows in the matrix and M = no. of columns 
+        Reason: In this approach, we are also traversing the entire matrix 2 times and each traversal is taking O(N*M) time complexity.
+
+Space Complexity: O(1) as we are not using any extra space.
+        '''
+        
+        
         n = len(matrix)   
         m= len(matrix[0])  
         col0 = 1
@@ -35,7 +44,7 @@ class Solution:
                 matrix[i][0] = 0
         
     """
-    Better approach :
+    okayish approach :
     
     Time Complexity: O(2*(N*M)), where N = no. of rows, M = no. of columns.
     Reason: We are traversing the entire matrix 2 times and each traversal is taking O(N*M) time complexity.
