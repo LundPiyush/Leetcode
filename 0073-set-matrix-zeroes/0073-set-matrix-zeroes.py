@@ -3,11 +3,11 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        n = len(matrix)
-        m= len(matrix[0])
+        n = len(matrix)   
+        m= len(matrix[0])  
         
-        row=n*[0]
-        col=m*[0]
+        row=n*[0]   #row-array
+        col=m*[0]   #column-array
         
         for i in range(n):
             for j in range(m):
