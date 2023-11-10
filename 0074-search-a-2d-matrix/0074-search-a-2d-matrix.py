@@ -17,8 +17,17 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         n = len(matrix)
         m = len(matrix[0])
-
-        for i in range(n):
-            if matrix[i][0] <= target <= matrix[i][m - 1]:
-                return self.binarySearch(matrix[i], target)
-        return False
+        low, high = 0, (n*m) - 1
+        
+        # Perform the steps:
+        while low <= high:
+            mid = (low + high) // 2
+            row = mid // m
+            col = mid % m
+            if matrix[row][col] == target:
+                return True
+            elif target > matrix[row][col]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return False 
