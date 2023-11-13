@@ -36,14 +36,8 @@ class Solution:
             ans.append(ele2)
             
         return ans
-            
-                
-            
         
-        
-    
-        
-        
+        # TC - > O(n) + O(n)        SC-> O(1)        
         '''
         Hashing method TC - > O(nlogn) SC->O(n)
         
