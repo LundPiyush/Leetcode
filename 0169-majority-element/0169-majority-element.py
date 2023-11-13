@@ -19,14 +19,13 @@ class Solution:
         '''
         
         '''
-        
         Moore Voting algorithm
         TC=> O(n) + O(n)
         SC => O(1)
         '''
         
         cnt = 0
-        ele = 0
+        ele = None
         n= len(nums)
         for i in range(n):
             if cnt == 0:
@@ -36,6 +35,7 @@ class Solution:
                 cnt+=1
             else:
                 cnt-=1
+        #verifying step 
         cnt2=0
         for i in range(n):
             if ele == nums[i]:
