@@ -1,5 +1,8 @@
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        # TWO POINTER APPROACH
+        # TC -> O(N3)   SC-> O(no. of quadruplets) This space is only used to store the answer.
+        
         ans =[]
         n = len(nums)
         nums.sort()
