@@ -8,7 +8,7 @@ class Solution:
             hashing[nums[i]] = i
         return {-1,-1}
     '''
-        two pointer approach  yes or no 
+        two pointer approach for Variant 2 where we have to tell pair is present yes or no
         nums.sort()
         n = len(nums)
         left,right = 0 , n-1
