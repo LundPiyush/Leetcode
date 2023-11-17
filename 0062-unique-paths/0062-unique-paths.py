@@ -11,6 +11,15 @@ class Solution:
         dp[i][j]=left + up
         return dp[i][j]
     def uniquePaths(self, m: int, n: int) -> int:
+        N = n+m-2
+        r = m-1
+        #NCR formula 
+        res = 1
+        for i in range(1,r+1):
+            res= res * (N- r +i)/i
+        return int(res) 
+        
+    '''
         dp=[[-1]*n for _ in range(m)]
         '''
             steps to convert recursion to dp :-
@@ -33,5 +42,6 @@ class Solution:
                     dp[i][j] = left + up
             
         return dp[m-1][n-1]
+    '''
         
         #return self.f(m-1,n-1,dp)  // recursion solution => the function is defined above
