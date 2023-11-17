@@ -5,9 +5,11 @@ class Solution:
         nums.sort()
         
         for i in range(n):
+            # remove duplicates:
             if i>0 and nums[i] == nums[i-1]:
                 continue
             j,k = i+1,n-1
+            # moving 2 pointers:
             while j <k:
                 if nums[i] + nums[j] + nums[k] < 0:
                     j = j+1
@@ -17,6 +19,7 @@ class Solution:
                     ans.append([nums[i],nums[j],nums[k]])
                     j = j+1
                     k = k-1
+                    # remove duplicates:
                     while j < k and nums[j] == nums[j-1]:
                         j = j+1
                     while j < k and nums[k] == nums[k+1]:
