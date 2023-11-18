@@ -1,5 +1,29 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
+        
+        n = len(nums)
+        st= set()
+        if n ==0:
+            return 0
+        # adding elements in the set
+        for ele in nums:
+            st.add(ele)
+        longest=1
+        for ele in st:
+            if ele - 1 not in st: # this means ele is Starting point of the sequence
+                cnt = 1
+                x = ele
+                # find consecutive numbers
+                while x+1 in st:
+                    x= x+1
+                    cnt+=1
+                longest=max(longest,cnt)
+        return longest
+
+    '''
+    # Better approach
+     TC- O(NlogN) + O(N)
+     SC- O(1)
         lastSmaller = float('-inf')
         currCount = 0
         longest = 1
@@ -17,7 +41,7 @@ class Solution:
             longest = max(longest,currCount)
         return longest
         
-        
+    ''' 
         
         
     '''
