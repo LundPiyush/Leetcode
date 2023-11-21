@@ -1,7 +1,7 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         n = len(nums)
-        mpp = defaultdict(int)
+        mpp = {}
         preSum = 0
         cnt = 0
 
@@ -14,10 +14,14 @@ class Solution:
             remove = preSum - k
 
             # Add the number of subarrays to be removed:
-            cnt += mpp[remove]
+            if remove in mpp:
+                cnt += mpp[remove]
 
             # Update the count of prefix sum in the map.
-            mpp[preSum] += 1
+            if preSum in mpp:
+                mpp[preSum] += 1
+            else:
+                mpp[preSum] = 1
 
         return cnt
         
