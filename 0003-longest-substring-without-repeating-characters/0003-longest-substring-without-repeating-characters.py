@@ -7,10 +7,9 @@ class Solution:
         maxi = 0
         left, right =0,0
         while right < n:
-            if a[right] in st:
-                while a[right] in st and left<= right:
-                    st.remove(a[left])
-                    left +=1
+            while a[right] in st and left<= right:
+                st.remove(a[left])
+                left +=1
             st.add(a[right])
             maxi = max(maxi,right-left+1)
             right+=1
