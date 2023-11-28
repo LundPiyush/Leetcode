@@ -5,6 +5,9 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        # TC - O(n1 + n2) 
+        # SC - O(1)
+        
         # when list1 is empty then our output will be same as list2
         if list1 == None: 
             return list2
