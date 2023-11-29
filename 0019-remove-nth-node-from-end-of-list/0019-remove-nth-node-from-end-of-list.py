@@ -12,13 +12,13 @@ class Solution:
             count +=1
         
         nth_node = count - n # 5 - 2 = 3
-        
         cur = head
         prev = None
-        while nth_node > 0:
+        for i in range(nth_node):
             prev = cur
             cur = cur.next
-            nth_node -=1
+    # if prev is None it means nth_node is 0 which means list length is x(say 3) nodes and they
+    # have asked to delete 3rd node from last which means 1st node of the list. Hence, we return head.next
         if prev == None:
             return head.next
         prev.next = cur.next
