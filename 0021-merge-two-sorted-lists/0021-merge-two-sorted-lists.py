@@ -6,7 +6,7 @@
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         # brute force
-        
+        '''
         temp = dummy = ListNode(0)
         
         while list1!=None and list2!=None:
@@ -27,7 +27,7 @@ class Solution:
         #we return dummy.next since dummy is pointing to 0 and next to zero is what we've added throughout the process.
         return dummy.next
                 
-            
+        '''    
         
         # TC - O(n1 + n2) 
         # SC - O(1)
