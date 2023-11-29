@@ -18,11 +18,13 @@ class Solution:
                 list2= list2.next
                 
             temp = temp.next
+            
+        #adds whatever left from whatever linkedlist to the temp.next
         if list1!=None:
             temp.next = list1
         else:
             temp.next = list2
-        
+        #we return dummy.next since dummy is pointing to 0 and next to zero is what we've added throughout the process.
         return dummy.next
                 
             
