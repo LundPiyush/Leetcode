@@ -6,7 +6,7 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        
+        # Optimised approach
         a = headA
         b = headB
         
@@ -14,13 +14,9 @@ class Solution:
             a = headB if a == None else a.next 
             b = headA if b == None else b.next 
         return a
-        
-        
-        
-        
-        
-        
-        
+    
+        '''
+        # better approach (Hashing)
         st = set()
         while headB:
             st.add(headB)
@@ -31,9 +27,10 @@ class Solution:
                 return headA
             headA= headA.next
         return None
-        
+        '''     
         
         '''
+        # brute force approach
         while headB!=None:
             temp = headA
             while temp!=None:
