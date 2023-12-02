@@ -11,23 +11,16 @@ class Solution:
         b = headB
         
         while a != b:
-            if a == None:
-                a = headB
-            else:
-                a = a.next
-            if b == None:
-                b = headA
-            else:
-                b = b.next
+            a = headB if a == None else a.next 
+            b = headA if b == None else b.next 
         return a
-                
         
         
         
         
         
         
-        '''
+        
         st = set()
         while headB:
             st.add(headB)
@@ -38,7 +31,7 @@ class Solution:
                 return headA
             headA= headA.next
         return None
-        '''
+        
         
         '''
         while headB!=None:
