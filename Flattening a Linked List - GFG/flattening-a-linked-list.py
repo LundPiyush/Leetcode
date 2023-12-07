@@ -10,37 +10,35 @@ class Node:
         self.bottom=None
         
 '''
-def mergeTwoLinkedList(a,b):
-    res=temp = Node(0)
+class Solution():
+    def mergeTwoLinkedList(self,a,b):
+        res=temp = Node(0)
     
-    while a!=None and b!=None:
-        if a.data < b.data:
+        while a!=None and b!=None:
+            if a.data < b.data:
+                temp.bottom = a
+                a = a.bottom
+            else:
+                temp.bottom = b
+                b = b.bottom
+            temp = temp.bottom
+        if a!=None:
             temp.bottom = a
-            a = a.bottom
         else:
-            temp.bottom = b
-            b = b.bottom
-            
-        temp = temp.bottom
-    if a!=None:
-        temp.bottom = a
-    else:
-        temp.bottom =b
+            temp.bottom =b
         
-    return res.bottom
+        return res.bottom
     
     
+    def flatten(self,root):
+        #Your code here
+        if root==None or root.next ==None:
+            return root
     
+        root.next = self.flatten(root.next)
     
-def flatten(root):
-    #Your code here
-    if root==None or root.next ==None:
+        root = self.mergeTwoLinkedList(root,root.next)
         return root
-    
-    root.next = flatten(root.next)
-    
-    root = mergeTwoLinkedList(root,root.next)
-    return root
 
 
 #{ 
@@ -86,7 +84,7 @@ if __name__=="__main__":
             a1=listo[it]
             it+=1
             temp=Node(a1)
-            if flag == 1:
+            if flag is 1:
                 head=temp
                 pre=temp
                 flag=0
@@ -100,14 +98,15 @@ if __name__=="__main__":
                 a=listo[it]
                 it+=1
                 tempB=Node(a)
-                if flag1 == 1:
+                if flag1 is 1:
                     temp.bottom=tempB
                     preB=tempB
                     flag1=0
                 else:
                     preB.bottom=tempB
                     preB=tempB
-        root=flatten(head)
+        obj=Solution()
+        root=obj.flatten(head)
         printList(root)
         
         t-=1
