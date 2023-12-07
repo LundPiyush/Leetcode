@@ -12,8 +12,8 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
             if fast == slow:
-                slow = head
-                while fast!=slow:
+                slow = head #start slow from start
+                while fast!=slow: # covering L1 distance to find the starting point
                     fast= fast.next
                     slow = slow.next
                 return slow
