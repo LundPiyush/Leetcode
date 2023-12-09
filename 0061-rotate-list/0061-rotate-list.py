@@ -17,12 +17,13 @@ class Solution:
         temp.next = head
         k = k % length  # when k is more than length of list
         end = length - k  # to get end of the list
-        while end:
-            temp = temp.next
+        new_tail = head # this will find last node in the return linked list
+        while end>1:
+            new_tail = new_tail.next
             end -= 1
     # breaking last node link and pointing to NULL
-        head = temp.next
-        temp.next = None
+        head = new_tail.next
+        new_tail.next = None
 
 
         return head 
