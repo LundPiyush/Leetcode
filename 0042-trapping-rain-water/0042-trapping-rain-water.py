@@ -1,5 +1,34 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        # OPTIMAL APPROACH ----------> TC- > O(N) SC-> O(1)
+        n = len(height)
+        res = 0
+        left_max,right_max=0,0
+        l,r=0,n-1
+        
+        while l<=r:
+            if height[l] <= height[r]:
+                if height[l]>=left_max:
+                    left_max= height[l]
+                else:
+                    res = res + (left_max-height[l])
+                l = l + 1
+            else:
+                if height[r]>=right_max:
+                    right_max= height[r]
+                else:
+                    res = res + (right_max-height[r])
+                r = r - 1
+        return res
+                    
+        
+        
+        
+        
+        
+        
+        # BETTER APPROACH : ------> TC- > O(3N) SC-> O(2N)
+        '''
         n = len(height)
         res = 0
         prefix_sum = [0]*n
@@ -18,7 +47,7 @@ class Solution:
             res+= min(prefix_sum[i],sufix_sum[i])- height[i]
         
         return res
-    
+        '''
         # Bute force TC - > O(N^2)
         '''
         n = len(height)
