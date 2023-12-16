@@ -7,6 +7,21 @@
 class Solution:
     
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        #Iterative approach
+        cur = root
+        ans = []
+        stack =[]
+        while True:
+            if cur !=None:
+                stack.append(cur)
+                cur = cur.left
+            else:
+                if len(stack) == 0:
+                    break
+                cur = stack.pop()
+                ans.append(cur.val)
+                cur = cur.right
+        return ans
         #Recursive approach
         ans = []
         if not root:
