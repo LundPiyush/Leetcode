@@ -13,16 +13,12 @@ class Solution:
             temp = stack.pop()
             if temp:
                 ans.append(temp.val)
-                stack.append(temp.right) #as we are using stack which works on LIFO, we need to push right tree first so that left will be popped out
-                stack.append(temp.left)
+                if temp.right:
+                    stack.append(temp.right) #as we are using stack which works on LIFO, we need to push right tree first so that left will be popped out
+                if temp.left:
+                    stack.append(temp.left)
         return ans
             
-        
-        
-        
-        
-        
-        
         '''
         Recursive approach
         ans = []
