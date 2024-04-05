@@ -18,7 +18,8 @@ class Solution:
                 if temp.left:
                     stack.append(temp.left)
         return ans
-            
+        
+        # TC - O(N), SC - O(N)
         '''
         Recursive approach
         ans = []
