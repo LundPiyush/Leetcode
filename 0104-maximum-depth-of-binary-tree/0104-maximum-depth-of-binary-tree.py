@@ -8,7 +8,7 @@ class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         # recursive approach 
         # Intution -  1 + max(depth of left subtree, depth of right subtree)
-
+        # using post order as we have to calculate left height then right height then add it 1 to current node 
         
         if root is None:
             return 0
