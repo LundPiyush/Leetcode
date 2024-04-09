@@ -12,5 +12,5 @@ class Solution:
         # If only one of the nodes is None, they are not identical        
         if p is None or q is None:
             return  False
-        
+        # Check if the current nodes have the same data value and recursively check their left and right subtrees
         return (p.val == q.val and self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right))
