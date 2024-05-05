@@ -6,6 +6,29 @@
 #         self.right = right
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        # Morris Traversal
+        cur = root
+        ans =[]
+
+        while cur:
+            if cur.left is None:
+                ans.append(cur.val)
+                cur = cur.right
+            else:
+                prev = cur.left
+                while prev.right and prev.right !=cur:
+                    prev = prev.right
+                if prev.right is None:
+                    prev.right=cur
+                    ans.append(cur.val)
+                    cur = cur.left
+                else:
+                    prev.right = None
+                    
+                    cur = cur.right
+
+        return ans
+        '''
         ans = []
         stack=[root]
         
@@ -18,7 +41,7 @@ class Solution:
                 if temp.left:
                     stack.append(temp.left)
         return ans
-        
+        '''
         # TC - O(N), SC - O(N)
         '''
         Recursive approach
