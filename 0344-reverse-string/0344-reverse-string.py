@@ -3,11 +3,12 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+
+        s[:]=s[::-1]
+        """
         s1 = s[::1]
-
-        j = 0
-        for i in range(len(s)-1,-1,-1):
+        j =0
+        for i in range(len(s) - 1, -1, -1):
             s[j] = s1[i]
-            j = j+1
-
-        
+            j = j + 1
+        """
