@@ -13,8 +13,9 @@ class Solution:
         
         while not q.empty():
             r, c = q.get()
-            
-            for drow, dcol in directions:
+
+            # traversal to find neigbours
+            for drow, dcol in directions: 
                 nrow, ncol = r + drow, c + dcol
 
                 if 0 <= nrow < n and 0 <= ncol < m and grid[nrow][ncol] == '1' and not vis[nrow][ncol]:
