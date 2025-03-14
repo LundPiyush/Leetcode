@@ -12,10 +12,9 @@ class Solution:
         # convert adj matrix to adj list
         for i in range(V):
             for j in range(V):
-                if i!=j and isConnected[i][j] == 1:
+                if isConnected[i][j] == 1 and i!=j:
                     adj[i].append(j)
-                    adj[j].append(i)
-
+        print(adj)
         vis = [False] * V
         count = 0
     
