@@ -12,6 +12,9 @@ class Solution:
         dRow = [-1,0,+1,0]
         dCol = [0,-1,0,+1]
 
+        if all(grid[i][j] == 0 for i in range(n) for j in range(m)):
+            return 0
+            
         for i in range(n):
             for j in range(m):
                 if grid[i][j] == 2:
